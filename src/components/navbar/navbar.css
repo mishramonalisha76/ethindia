@@ -18,13 +18,25 @@
 
 .navbar-menu p{
     margin: 0 30px;
+    cursor: pointer;
+}
+.navbar-menu p:hover{
+    color: #2fc9d6;
+    text-underline-offset:4px;
+    text-decoration: underline;
 }
 .navbar-button button{  
-    background: #2fc9d6;;
+    cursor: pointer;
+    background: #2fc9d6;
     border: none;
     padding: 12px 15px;
     color: white;
     font-size: 1.1rem;
     border-radius: 2.5rem;
     font-weight: 600;
+}
+.navbar-button button:hover{  
+    background: #fff;
+    border: 1px solid #2fc9d6;
+    color: #2fc9d6;
 }

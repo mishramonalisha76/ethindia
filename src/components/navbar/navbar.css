@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    padding:7px 30px;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.navbar-menu {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar-menu p{
+    margin: 0 30px;
+}
+.navbar-button button{  
+    background: #2fc9d6;;
+    border: none;
+    padding: 12px 15px;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 2.5rem;
+    font-weight: 600;
+}

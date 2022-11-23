@@ -1,4 +1,5 @@
 import Navbar from "../navbar";
+import SecondSection from "./second-section";
 import "./landing.css";
 
 function Landing() {
@@ -17,6 +18,7 @@ function Landing() {
           </div>
         </div>
       </div>
+      <SecondSection/>
     </div>
   );
 }

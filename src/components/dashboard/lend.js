@@ -1,8 +1,9 @@
 import "./dashboard.css";
 
-function Lend() {
+function Lend(props) {
   return (
     <div class="buy">
+        <h1>Lend</h1>
       <div>
         <label>Chain</label>
         <select id="chain" name="chain">
@@ -21,7 +22,7 @@ function Lend() {
         <label>Enter Amount</label>
         <input type="number" name="amount" />
       </div>
-      <button>Next</button>
+      <button onClick= {()=>props.handleNext()}>Next</button>
     </div>
   );
 }

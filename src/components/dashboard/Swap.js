@@ -1,8 +1,9 @@
 import "./dashboard.css";
 
-function Swap() {
+function Swap(props) {
   return (
     <div class="buy">
+        <h1>Swap</h1>
       <div>
         <label>Chain</label>
         <select id="chain" name="chain">
@@ -21,7 +22,7 @@ function Swap() {
         <label>Enter Amount</label>
         <input type="number" name="amount" />
       </div>
-      <button>Next</button>
+      <button onClick= {()=>props.handleNext()}>Next</button>
     </div>
   );
 }

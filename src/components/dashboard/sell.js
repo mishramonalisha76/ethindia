@@ -1,8 +1,9 @@
 import "./dashboard.css";
 
-function Sell() {
+function Sell(props) {
   return (
     <div class="buy">
+        <h1>Sell</h1>
       <div>
         <label>Chain</label>
         <select id="chain" name="chain">
@@ -21,7 +22,7 @@ function Sell() {
         <label>Enter Amount</label>
         <input type="number" name="amount" />
       </div>
-      <button>Next</button>
+      <button onClick= {()=>props.handleNext()}>Next</button>
     </div>
   );
 }

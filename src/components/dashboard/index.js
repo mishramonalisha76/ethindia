@@ -13,13 +13,17 @@ function Dashboard() {
     console.log("here")
     setCard(card+1);
   }
+  const handlePrevious = () => {
+    console.log("here")
+    setCard(card-1);
+  }
 
   return (
     <div class="dashboard">
       {card === 0 && <Buy handleNext = {()=>handleNext()}/>}
-      {card === 1 && <Sell handleNext = {()=>handleNext()}/>}
-      {card === 2 && <Lend handleNext = {()=>handleNext()}/>}
-      {card === 3 && <Swap handleNext = {()=>handleNext()}/>}
+      {card === 1 && <Sell handleNext = {()=>handleNext()} handlePrevious = {()=>handlePrevious()}/>}
+      {card === 2 && <Lend handleNext = {()=>handleNext()} handlePrevious = {()=>handlePrevious()}/>}
+      {card === 3 && <Swap  handlePrevious = {()=>handlePrevious()}/>}
     </div>
   );
 }

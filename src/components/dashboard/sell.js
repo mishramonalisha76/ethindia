@@ -23,6 +23,7 @@ function Sell(props) {
         <input type="number" name="amount" />
       </div>
       <button onClick= {()=>props.handleNext()}>Next</button>
+      <button onClick= {()=>props.handlePrevious()}>Previous</button>
     </div>
   );
 }

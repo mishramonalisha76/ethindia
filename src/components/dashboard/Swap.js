@@ -22,7 +22,9 @@ function Swap(props) {
         <label>Enter Amount</label>
         <input type="number" name="amount" />
       </div>
-      <button onClick= {()=>props.handleNext()}>Next</button>
+      <button >Execute</button>
+      <button onClick= {()=>props.handlePrevious()}>Previous</button>
+
     </div>
   );
 }

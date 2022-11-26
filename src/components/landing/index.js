@@ -13,7 +13,7 @@ function Landing() {
           <div className="landing-hero-text  animate__animated animate__fadeInLeft">
             <h1 >Say HI to MultiFi</h1>
             <p>
-              One-stop destination to Borrow, Lend, Stake and Swap yout tokens on multiple chains in just a simple click.
+              One-stop destination to Borrow, Lend, Stake and Swap your tokens on multiple chains in just a simple click.
             </p>
           </div>
           <div className="landing-hero-img-div">

@@ -3,7 +3,7 @@ import SecondSection from "./second-section";
 import Hero from "../../assets/hero.png";
 import "./landing.css";
 import 'animate.css';
-
+import Footer from "../footer";
 function Landing() {
   return (
     <div class="landing">
@@ -11,11 +11,9 @@ function Landing() {
       <div className="landing-content">
         <div className="landing-hero">
           <div className="landing-hero-text  animate__animated animate__fadeInLeft">
-            <h1 >SAY HI TO DEFI</h1>
+            <h1 >Say HI to MultiFi</h1>
             <p>
-              Your crypto wallet to safely navigate decentralized finance
-              (DeFi). Earn yield with vetted protocols. Swap tokens on verified
-              exchanges.
+              One-stop destination to Borrow, Lend, Stake and Swap yout tokens on multiple chains in just a simple click.
             </p>
           </div>
           <div className="landing-hero-img-div">
@@ -24,6 +22,7 @@ function Landing() {
         </div>
       </div>
       <SecondSection/>
+      <Footer/>
     </div>
   );
 }

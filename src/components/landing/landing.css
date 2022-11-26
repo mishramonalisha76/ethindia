@@ -1,6 +1,8 @@
-:root{
+:root {
     --primary-font: 'Poppins'
 }
+
+/* landing */
 
 .landing {
     height: 100%;
@@ -25,7 +27,7 @@
 }
 
 .landing-hero-text h1 {
-    font-family:var(--primary-font);
+    font-family: var(--primary-font);
     font-size: 7rem;
     font-weight: 900;
     width: 30rem;
@@ -38,9 +40,9 @@
     font-weight: 400;
     width: 40rem;
     letter-spacing: 0.1rem;
-    line-height: 120%;
+    line-height: 38px;
     margin-top: -5%;
-    font-family:var(--primary-font);
+    font-family: var(--primary-font);
 }
 
 .landing-hero-img-div {
@@ -62,7 +64,7 @@
     align-items: center;
 }
 
-.first-level{
+.first-level {
     margin: 7rem 0rem;
 }
 
@@ -70,9 +72,28 @@
     background: rgb(0 255 254/5%);
     border-radius: 25px;
     padding: 60px 30px;
-    width: 20vw;
-    font-family:var(--primary-font);
+    font-family: var(--primary-font);
     font-weight: 500;
     margin: -2rem 2rem;
     box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px, rgb(0 0 0 / 5%) 0px 4px 6px -2px;
+}
+
+.second-section-container span {
+    font-size: large;
+    text-align: center;
+}
+
+.second-section-container .img {
+    vertical-align: middle;
+}
+
+.second-section-container .img.tokens {
+    width: 10vw;
+    padding: 0rem 2rem;
+    border-radius: 15%;
+}
+
+.second-section-container .img.multichain {
+    width: 8.5vw;
+    padding: 0rem 2rem;
 }

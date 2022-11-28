@@ -6,7 +6,7 @@ import 'animate.css';
 import Footer from "../footer";
 function Landing() {
   return (
-    <div class="landing">
+    <div className="landing">
       <Navbar />
       <div className="landing-content">
         <div className="landing-hero">

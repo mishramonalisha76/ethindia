@@ -78,22 +78,32 @@
     box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px, rgb(0 0 0 / 5%) 0px 4px 6px -2px;
 }
 
-.second-section-container span {
-    font-size: large;
-    text-align: center;
-}
-
-.second-section-container .img {
-    vertical-align: middle;
-}
-
-.second-section-container .img.tokens {
+.second-section-container .tokens {
     width: 10vw;
     padding: 0rem 2rem;
     border-radius: 15%;
 }
 
-.second-section-container .img.multichain {
+.second-section-container .multichain {
     width: 8.5vw;
     padding: 0rem 2rem;
+}
+
+.second-section-container .content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+
+@media (max-width:768px) {
+    .second-section-container {
+
+        flex-direction: column;
+    }
+
+    .second-section-container .content-container {
+        flex-direction: column;
+
+    }
 }

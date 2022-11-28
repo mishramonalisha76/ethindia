@@ -13,7 +13,7 @@ export default function Navbar() {
         <p>Security</p>
         <p>Contact</p>
       </div>
-      <Link to="dashboard" className="navbar-button">
+      <Link to="/defi" className="navbar-button">
         <button>Launch Dapp</button>
       </Link>
     </nav>

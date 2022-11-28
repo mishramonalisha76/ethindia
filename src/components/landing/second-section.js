@@ -1,26 +1,27 @@
 import "./landing.css";
-import wallet from "../../assets/wallet.png"
-import coins from "../../assets/coins.png"
-import multichain from "../../assets/multichain.png"
+import wallet from "../../assets/wallet.png";
+import coins from "../../assets/coins.png";
+import multichain from "../../assets/multichain.png";
 
 function SecondSection() {
   return (
     <>
       <div className="second-section-container first-level">
-        <div>
-          <span>Borrow, lend, swap, stake tokens</span>
-          <img src={coins} className="img tokens"/>
-
+        <div className="content-container">
+          <div>Borrow, lend, swap, stake tokens</div>
+          <img src={coins} className=" tokens" />
         </div>
-        <div>
-          <span>Supports transactions on Multichain</span>
-          <img src={multichain} className="img multichain"/>
+        <div className="content-container">
+          <div>Supports transactions on Multichain</div>
+          <img src={multichain} className=" multichain" />
         </div>
       </div>
       <div className="second-section-container">
-        <div >
-          <span>Just <strong>one </strong>click and the rest is handled by us!</span>
-          <img src={wallet} className="img"/>
+        <div className="content-container">
+          <div>
+            Just <strong>one </strong>click and the rest is handled by us!
+          </div>
+          <img src={wallet} />
         </div>
       </div>
     </>

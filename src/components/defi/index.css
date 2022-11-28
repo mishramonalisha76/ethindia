@@ -1,0 +1,15 @@
+.connect-wallet-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.defi-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+label,input,select,button{
+    display: block;
+}

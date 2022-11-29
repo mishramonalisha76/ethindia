@@ -9,4 +9,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+label{
+    padding: 1rem;
+
+
+}
+
+button{
+    padding: 0.5rem;
+    margin: 2rem 1rem;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

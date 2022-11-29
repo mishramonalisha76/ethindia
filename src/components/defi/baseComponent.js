@@ -45,7 +45,6 @@ function BaseComponent(props) {
           <option value="dummy2">Dummy2</option>
           <option value="dummy3">Dummy3</option>
         </select>
-
         {pageState === 3 ? (
           <>
             <div>To</div>
@@ -69,11 +68,12 @@ function BaseComponent(props) {
           <option value="polkadot">Polkadot</option>
         </select>
       </div>
+
       <div class="button-container">
-        {pageState != 1 ? (
+        {pageState !== 1 ? (
           <button onClick={() => getPrevPage(pageState)}>Back</button>
         ) : null}
-        {pageState != 4 ? (
+        {pageState !== 4 ? (
           <button onClick={() => getNextPage(pageState)}>Next</button>
         ) : null}
         {pageState === 4 ? (

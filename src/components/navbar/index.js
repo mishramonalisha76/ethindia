@@ -7,7 +7,7 @@ import 'animate.css';
 export default function Navbar() {
   return (
     <nav className="navbar animate__animated animate__fadeInDown">
-      <p className="navbar-logo">MULTIFI</p>
+      <p className="navbar-logo">MULTIVO</p>
       <div className="navbar-menu">
         <p>Home</p>
         <p>About</p>

@@ -6,7 +6,8 @@ import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
-import Defi from "./defi"
+import CreateProposal from "./defi/createProposal";
+import ShowProposal from "./defi/showProposal";
 
 export default function RouterComponent() {
   const { chains, provider } = configureChains(
@@ -31,7 +32,8 @@ export default function RouterComponent() {
           <Router>
             <Routes>
               <Route path="/" element={<Landing />} />
-              <Route path="/defi" element={<Defi />} />
+              <Route path="/createproposal" element={<CreateProposal />} />
+              <Route path="/showproposal" element={<ShowProposal />} />
             </Routes>
           </Router>
       </RainbowKitProvider>

@@ -1,40 +1,113 @@
-.defi {
+.create-proposal {
     display: flex;
     flex-direction: column;
-}
-.connect-wallet-container{
-    display: flex;
+    align-items: baseline;
     justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
+background-color: white;  
+border-radius: 24px;  
+margin: 3rem 10rem;
+padding: 2rem 3rem;
+width: fit-content;
+margin:auto;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+ .create-h1 {
+    text-align: center;
+    margin:3rem;
+    color: black;
 }
 
-.defi-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: white;
-    margin:2rem 10rem;
-    border-radius: 2rem;
-    padding:2rem;
+.create-proposal label {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 2rem 1rem 0.7rem 1rem;
 }
 
-label{
-    padding: 1rem;
-
-
-}
-
-
-button{
+.create-proposal input {
+    height: 2rem;
     padding: 0.5rem;
-    margin: 2rem 1rem;
+    width: 13rem;
+    border-radius: 1rem;
+    font-size:1.2rem;
+    margin-bottom: 1rem;
+    border: 1px solid black;
+}
+.create-proposal select {
+    padding: 0.5rem;
+    width: 14.5rem;
+    font-weight: 400;
+    font-size:1.2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
 }
 
-.button-container{
+.create-proposal button {
+    cursor: pointer;
+    background: #2fc9d6;
+    border: none;
+    padding: 12px 15px;
+    color: white;
+    font-size: 1.5rem;
+    border-radius:1rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    padding: 0.7rem 2rem;
+    margin: auto;
+}
+.create-proposal button:hover{  
+    background: #fff;
+    border: 1px solid #2fc9d6;
+    color: #2fc9d6;
+}
+
+.show-proposal-div {
+padding: 1rem 5rem;
+display: flex;
+flex-direction: column;
+}
+
+.show-proposal-div h1 {
+    margin-bottom: 3rem;
+}
+
+.show-proposal{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -2%;
+    flex-direction: column;
+    border-bottom:1px solid black;
+    margin-top: 2%;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;}
+.show-proposal span {
+    font-size: 1.3rem;
+    font-weight: 500;
+   
+}
+.show-proposal p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: -0.1%;
+}
+.vote-unvote {
+    display: flex;
+    justify-content:end;
+}
+.vote-unvote button {
+    cursor: pointer;
+    background: #2fc9d6;
+    border: none;
+    padding: 12px 15px;
+    color: white;
+    font-size: 1.1rem;
+    border-radius:1rem;
+    font-weight: 500;
+    margin: 1rem;
+    padding: 0.7rem 2rem;
+}
+
+.vote-unvote button:hover{  
+    background: #fff;
+    border: 1px solid #2fc9d6;
+    color: #2fc9d6;
 }

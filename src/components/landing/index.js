@@ -15,7 +15,12 @@ function Landing() {
             <p>
               One-stop destination to Borrow, Lend, Stake and Swap your tokens on multiple chains in just a simple click.
             </p>
+            <div>
+            <button>Create Proposal</button>
+            <button>Vote On Proposal</button>
           </div>
+          </div>
+         
           <div className="landing-hero-img-div">
             <img className="landing-hero-img animate__animated animate__fadeInRight" src={Hero} alt="multchain"/>
           </div>

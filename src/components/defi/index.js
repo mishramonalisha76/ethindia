@@ -34,7 +34,7 @@ function Defi() {
   }
 
   return (
-    <div>
+    <div className="defi">
       <div className="connect-wallet-container">
         <ConnectWallet />
       </div>

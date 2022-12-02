@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import "./navbar.css";
 import 'animate.css';
 
@@ -13,9 +14,7 @@ export default function Navbar() {
         <p>Security</p>
         <p>Contact</p>
       </div>
-      <Link to="/defi" className="navbar-button">
-        <button>Launch Dapp</button>
-      </Link>
+      <ConnectButton/>
     </nav>
   );
 }

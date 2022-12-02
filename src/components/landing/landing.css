@@ -24,8 +24,24 @@
 .landing-hero-text {
     display: flex;
     flex-direction: column;
+    margin-top: -3%;
 }
-
+.landing-hero-text button {
+    cursor: pointer;
+    background: #2fc9d6;
+    border: none;
+    padding: 12px 15px;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 2.5rem;
+    font-weight: 600;
+    margin-top: -0.5%;
+}
+.landing-hero-text button:hover{  
+    background: #fff;
+    border: 1px solid #2fc9d6;
+    color: #2fc9d6;
+}
 .landing-hero-text h1 {
     font-family: var(--primary-font);
     font-size: 7rem;

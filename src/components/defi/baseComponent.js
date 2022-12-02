@@ -28,7 +28,7 @@ function BaseComponent(props) {
   }
 
   return (
-    <>
+    <div>
       <div class="defi-container">
         <h2>{heading}</h2>
         <label htmlFor="token-amount">Enter amount</label>
@@ -80,7 +80,7 @@ function BaseComponent(props) {
           <button onClick={handleSubmit}>Submit</button>
         ) : null}
       </div>
-    </>
+    </div>
   );
 }
 

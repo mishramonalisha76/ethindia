@@ -1,0 +1,279 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "contract IConnext",
+				"name": "_connext",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint32",
+				"name": "_domain",
+				"type": "uint32"
+			},
+			{
+				"internalType": "address",
+				"name": "_childContractAddress",
+				"type": "address"
+			}
+		],
+		"name": "addChildContractAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "connext",
+		"outputs": [
+			{
+				"internalType": "contract IConnext",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_daoName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_proposalTitle",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_proposalDescHash",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_noOfOptions",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_voteTimeEnd",
+				"type": "uint256"
+			}
+		],
+		"name": "createDaoProposal",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "daoProposals",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "daoName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "proposalTitle",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "proposalDescHash",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "noOfOptions",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "voteEndTime",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_proposalId",
+				"type": "uint256"
+			}
+		],
+		"name": "getProposalResult",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint32",
+				"name": "",
+				"type": "uint32"
+			}
+		],
+		"name": "mapDomainToContract",
+		"outputs": [
+			{
+				"internalType": "uint32",
+				"name": "domain",
+				"type": "uint32"
+			},
+			{
+				"internalType": "address",
+				"name": "childContractAddress",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "mapProposalIdToVoterToVoteDetails",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "optionId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "proposalId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "voter",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "mapProposalIdToVoters",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_transferId",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_asset",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_originSender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint32",
+				"name": "_origin",
+				"type": "uint32"
+			},
+			{
+				"internalType": "bytes",
+				"name": "_callData",
+				"type": "bytes"
+			}
+		],
+		"name": "xReceive",
+		"outputs": [
+			{
+				"internalType": "bytes",
+				"name": "",
+				"type": "bytes"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]

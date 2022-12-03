@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { makeStorageClient } from "../../ipfs";
 import { CarReader, CarWriter } from "@ipld/car";
 import "./index.css";
+import Vote from '../../biconomy'
 
 function ShowProposal() {
   const [proposals, setProposals] = useState([]);
@@ -71,7 +72,7 @@ function ShowProposal() {
             {proposal.time} hrs
           </p>
           <div className="vote-unvote">
-            <button onClick={() => vote()}>Vote</button>
+            <button onClick={() => Vote()}>Vote</button>
             <button onClick={() => unVote()}>Unvote</button>
           </div>
         </div>

@@ -1,5 +1,7 @@
-
 import { useState } from "react";
+import client from "../../ipfs";
+import { makeStorageClient } from "../../ipfs";
+
 import "./index.css";
 
 function CreateProposal() {
@@ -8,11 +10,11 @@ function CreateProposal() {
   const [time, setTime] = useState(0);
   const [daoName, setDaoName] = useState("");
 
-
   const handleTitleChange = (val) => {
     setTitle(val);
   };
   const handleDescChange = (val) => {
+    console.log(val)
     setDesc(val);
   };
   const handleDaoChange = (val) => {
@@ -21,11 +23,18 @@ function CreateProposal() {
   const handletimeChange = (val) => {
     setTime(val);
   };
+  const handleSubmit = async () => {
+    console.log(desc)
+    const client = makeStorageClient();
+    const cid = await client.put(desc);
+    console.log("stored files with cid:", cid);
+    return cid;
+  };
   return (
     <>
       <h1 className="create-h1">Create your proposal</h1>
       <div className="create-proposal">
-      <label>Dao Name</label>
+        <label>Dao Name</label>
         <input
           type="text"
           name="daoname"
@@ -41,10 +50,9 @@ function CreateProposal() {
         />
         <label>Proposal Description</label>
         <input
-          type="text"
+          type="file"
           name="desc"
-          value={desc}
-          onChange={(e) => handleDescChange(e.target.value)}
+          onChange={(e) => handleDescChange(e.target.files)}
         />
         <label>Token</label>
         <select name="token" id="token">
@@ -58,7 +66,7 @@ function CreateProposal() {
           value={time}
           onChange={(e) => handletimeChange(e.target.value)}
         />
-        <button>Create</button>
+        <button onClick={() => handleSubmit()}>Create</button>
       </div>
     </>
   );

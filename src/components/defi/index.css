@@ -16,11 +16,14 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin:3rem;
     color: black;
 }
-
+.create-proposal div {
+    display: flex;
+    flex-direction: column;
+}
 .create-proposal label {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 400;
-    margin: 2rem 1rem 0.7rem 1rem;
+    margin: 2rem 1rem 0.7rem 0rem;
 }
 
 .create-proposal input {
@@ -28,7 +31,7 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 0.5rem;
     width: 13rem;
     border-radius: 1rem;
-    font-size:1.2rem;
+    font-size:1.1rem;
     margin-bottom: 1rem;
     border: 1px solid black;
 }
@@ -36,7 +39,7 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 0.5rem;
     width: 14.5rem;
     font-weight: 400;
-    font-size:1.2rem;
+    font-size:1.1rem;
     border-radius: 1rem;
     margin-bottom: 2rem;
 }

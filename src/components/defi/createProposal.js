@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { makeStorageClient,jsonFile } from "../../ipfs";
+import { useContractWrite, usePrepareContractWrite } from 'wagmi'
 
 
 import "./index.css";
@@ -9,6 +10,7 @@ function CreateProposal() {
   const [desc, setDesc] = useState("");
   const [time, setTime] = useState(0);
   const [daoName, setDaoName] = useState("");
+  const [options, setOptions] = useState(1);
 
   const handleTitleChange = (val) => {
     setTitle(val);
@@ -33,7 +35,19 @@ function CreateProposal() {
         name:title,
     });
     console.log("stored files with cid:", cid);
+    await handleCall();
     return cid;
+  };
+
+  const handleCall = async () => {
+    const { config } = usePrepareContractWrite({
+        address: '0xecb504d39723b0be0e3a9aa33d646642d1051ee1',
+        abi: wagmigotchiABI,
+        functionName: 'feed',
+      })
+      const { data, isLoading, isSuccess, write } = useContractWrite(config)
+   console.log(isSuccess);    
+   
   };
   return (
     <>
@@ -62,10 +76,10 @@ function CreateProposal() {
           value={desc}
           onChange={(e) => handleDescChange(e.target.value)}
         />
-        <label>Token</label>
-        <select name="token" id="token">
-          <option value="matic">Matic</option>
-          <option value="sushi">Sushi</option>
+        <label>Options</label>
+        <select name="options" id="options">
+          <option value='1'>1</option>
+          <option value='2'>2</option>
         </select>
         <label>Time duration(in hrs)</label>
         <input

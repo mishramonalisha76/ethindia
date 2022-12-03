@@ -15,3 +15,7 @@ function getAccessToken () {
 export function makeStorageClient () {
   return new Web3Storage({ token: getAccessToken() })
 }
+
+export function jsonFile(filename, obj) {
+    return new File([JSON.stringify(obj)], filename)
+  }

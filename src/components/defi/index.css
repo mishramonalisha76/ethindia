@@ -53,9 +53,9 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     font-size: 1.5rem;
     border-radius:1rem;
     font-weight: 500;
-    margin-top: 1.5rem;
-    padding: 0.7rem 2rem;
     margin: auto;
+    margin-top: 1.5rem ;
+    padding: 0.7rem 2rem;
 }
 .create-proposal button:hover{  
     background: #fff;

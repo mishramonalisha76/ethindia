@@ -1,6 +1,6 @@
 import { useState } from "react";
-import client from "../../ipfs";
-import { makeStorageClient } from "../../ipfs";
+import { makeStorageClient,jsonFile } from "../../ipfs";
+
 
 import "./index.css";
 
@@ -25,8 +25,13 @@ function CreateProposal() {
   };
   const handleSubmit = async () => {
     console.log(desc)
+    const metadataFile = jsonFile('metadata.json', {
+        path: desc,
+      })
     const client = makeStorageClient();
-    const cid = await client.put(desc);
+    const cid = await client.put([metadataFile],{
+        name:title,
+    });
     console.log("stored files with cid:", cid);
     return cid;
   };
@@ -49,10 +54,13 @@ function CreateProposal() {
           onChange={(e) => handleTitleChange(e.target.value)}
         />
         <label>Proposal Description</label>
-        <input
-          type="file"
+        <textarea
+          type="text"
           name="desc"
-          onChange={(e) => handleDescChange(e.target.files)}
+          cols='40'
+          rows='5'
+          value={desc}
+          onChange={(e) => handleDescChange(e.target.value)}
         />
         <label>Token</label>
         <select name="token" id="token">

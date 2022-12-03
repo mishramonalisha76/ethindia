@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { makeStorageClient } from "../../ipfs";
+import { CarReader, CarWriter } from "@ipld/car";
 import "./index.css";
 
 function ShowProposal() {
@@ -31,19 +32,22 @@ function ShowProposal() {
     ]);
   }, [proposals.length]);
   const retrieve = async (cid) => {
-    const client = makeStorageClient();
-    const res = await client.get(cid);
-    console.log(`Got a response! [${res.status}] ${res.statusText}`);
-    console.log(res);
+    console.log("retrieve");
+    // const client = makeStorageClient();
+    const res = await fetch(
+      `https://${cid}.ipfs.dweb.link/${encodeURIComponent("metadata.json")}`
+    );
     if (!res.ok) {
-      throw new Error(`failed to get ${cid}`);
+      throw new Error(
+        `error fetching image metadata: [${res.status}] ${res.statusText}`
+      );
     }
-
+    const metadata = await res.json();
+    console.log(metadata);
     // request succeeded! do something with the response object here...
   };
 
   const vote = () => {};
-retrieve('bafybeieeudmooemnbya3kewnqkxucgsaf2urikyajs4hiqs7osdwba73mi');
   const unVote = () => {};
   return (
     <div className="show-proposal-div">
@@ -58,7 +62,9 @@ retrieve('bafybeieeudmooemnbya3kewnqkxucgsaf2urikyajs4hiqs7osdwba73mi');
             {proposal.proposalTitle}
           </p>
           <p>
-            <span>Description:</span> {proposal.proposalDescription}
+            <span>Description:</span>{" "}
+            {retrieve('bafybeihsdhqa22kuwlvjt7nfjac4igezbrz2ov7sy5u5xu2frpgthrcxhe').path}
+            {}
           </p>
           <p>
             <span>Time: </span>

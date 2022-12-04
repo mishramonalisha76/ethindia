@@ -10,11 +10,12 @@ import { chain} from "wagmi";
 import SmartAccount from "@biconomy/smart-account";
 import voteAbi from '../src/abi/voteAbi.json'
 import { activeChainId,supportedChains} from '../src/utils/chainConfig';
+//import signer from ''
 
-export const initialiseForwardTransaction = async(walletProvider,signer) => {
+const initialiseForwardTransaction = async(signer) => {
     let options = {
         activeNetworkId: activeChainId,
-        supportedNetworksIds: supportedChains,
+        supportedNetworksIds: [activeChainId],
         networkConfig: [
                  {
                  chainId: ChainId.POLYGON_MUMBAI,
@@ -26,10 +27,10 @@ export const initialiseForwardTransaction = async(walletProvider,signer) => {
        }
 
        //const provider= useProvider()
-       const provider = new HDWalletProvider(signer,process.env.ALCHEMY_ID);
-       
-
-       console.log(walletProvider)
+    
+       const walletProvider = new ethers.providers.Web3Provider(
+        (signer?.provider).provider
+      );
        let smartAccount = new SmartAccount(walletProvider, options);
        smartAccount = await smartAccount.init();
        let smartAccountInfo = await smartAccount.getSmartAccountState();
@@ -54,9 +55,9 @@ export const initialiseForwardTransaction = async(walletProvider,signer) => {
 }
 
 
-const vote = async(provider) => {
+const vote = async(signer) => {
     const tokenAddress = '0x4a33B5c9c1D1Df59f2bA0459Fd62065A010847Fc'
-    const {voteInterface,smartAccount} = await initialiseForwardTransaction(provider);
+    const {voteInterface,smartAccount} = await initialiseForwardTransaction(signer);
     const data1 = voteInterface.encodeFunctionData(
         'vote', ['122444545', '342324345']
     )
@@ -71,7 +72,7 @@ const vote = async(provider) => {
       txs.push(tx1)
 
       const feeQuotes=  await smartAccount.prepareRefundTransactionBatch(
-        {transactions:txs, chainId: 8}
+        {transactions:txs, chainId: 80001}
         );
       const transaction = await smartAccount.createRefundTransactionBatch({
         transactions: txs,
@@ -82,7 +83,7 @@ const vote = async(provider) => {
         tx: transaction, 
       });
 
-      console.log(txId)
+      console.log("transactionId",txId)
 
 }
 export default vote;

@@ -11,7 +11,7 @@ import ShowProposal from "./defi/showProposal";
 
 export default function RouterComponent() {
   const { chains, provider } = configureChains(
-    [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
+    [chain.polygonMumbai,chain.goerli,chain.optimismGoerli],
     [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
   );
 

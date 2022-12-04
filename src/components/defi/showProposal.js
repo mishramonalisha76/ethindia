@@ -1,11 +1,34 @@
 import { useEffect, useState } from "react";
-import { makeStorageClient } from "../../ipfs";
-import { CarReader, CarWriter } from "@ipld/car";
+import { useContractRead ,usePrepareContractWrite, useContractWrite, chainId} from 'wagmi';
+import MainAbi from "../../abi/MainAbi.json";
+import VoteAbi from "../../abi/voteAbi.json";
+import { useContract } from 'wagmi'
 import "./index.css";
+import { mainContractAddress, voteContractAddress } from "../../constants";
 
 function ShowProposal() {
   const [proposals, setProposals] = useState([]);
+  const [proposalId, setProposalId] = useState([]);
+  const contract = useContract({
+    address: mainContractAddress,
+    abi: MainAbi,
+  })
+  const { config, error } = usePrepareContractWrite({
+    address: voteContractAddress[chainId],
+    abi: VoteAbi,
+    functionName: 'vote',
+    args:[0,proposalId]
+  })
 
+  console.log(config, error)
+  const { data, isLoading, isSuccess, write } = useContractWrite(config)
+console.log(contract)
+  console.log(contract.daoProposals(0));
+
+  const vote = async(id,option) => {
+setProposalId(id);
+await write();
+  }
   useEffect(() => {
     setProposals([
       {
@@ -14,6 +37,7 @@ function ShowProposal() {
         proposalDescription:
           "Make the app open to users Make the app open to users Make the app open to users Make the app open to users Make the app open to users",
         time: 6,
+        options:['1','2']
       },
       {
         daoName: "SushiSwap",
@@ -21,6 +45,7 @@ function ShowProposal() {
         proposalDescription:
           "Make the app open to users Make the app open to users Make the app open to users Make the app open to users Make the app open to users",
         time: 6,
+        options:['1','2']
       },
       {
         daoName: "SushiSwap",
@@ -28,9 +53,12 @@ function ShowProposal() {
         proposalDescription:
           "Make the app open to users Make the app open to users Make the app open to users Make the app open to users Make the app open to users",
         time: 6,
+        options:['1','2']
       },
     ]);
   }, [proposals.length]);
+
+
   const retrieve = async (cid) => {
     console.log("retrieve");
     // const client = makeStorageClient();
@@ -47,12 +75,11 @@ function ShowProposal() {
     // request succeeded! do something with the response object here...
   };
 
-  const vote = () => {};
   const unVote = () => {};
   return (
     <div className="show-proposal-div">
       <h1>Vote On Proposals</h1>
-      {proposals.map((proposal) => (
+      {proposals.map((proposal,index) => (
         <div className="show-proposal">
           <p>
             <span>Dao Name:</span> {proposal.daoName}
@@ -71,8 +98,8 @@ function ShowProposal() {
             {proposal.time} hrs
           </p>
           <div className="vote-unvote">
-            <button onClick={() => vote()}>Vote</button>
-            <button onClick={() => unVote()}>Unvote</button>
+            <button onClick={() => vote(index,0)}>Vote</button>
+            <button style={{opacity:'0.5'}} onClick={() => unVote()}>Unvote</button>
           </div>
         </div>
       ))}

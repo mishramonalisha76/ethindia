@@ -12,7 +12,7 @@ function Landing() {
       <div className="landing-content">
         <div className="landing-hero">
           <div className="landing-hero-text  animate__animated animate__fadeInLeft">
-            <h1 >Say HI to MultiVo</h1>
+            <h1 >Say HI to XVote</h1>
             <p>
               One-stop destination to Borrow, Lend, Stake and Swap your tokens on multiple chains in just a simple click.
             </p>

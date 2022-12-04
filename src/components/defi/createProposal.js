@@ -1,16 +1,29 @@
 import { useState } from "react";
 import { makeStorageClient,jsonFile } from "../../ipfs";
-import { useContractWrite, usePrepareContractWrite } from 'wagmi'
+import { useContractWrite, usePrepareContractWrite,chainId } from 'wagmi'
+import MainAbi from "../../abi/MainAbi.json";
 
 
 import "./index.css";
+import { mainContractAddress } from "../../constants";
 
 function CreateProposal() {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [time, setTime] = useState(0);
   const [daoName, setDaoName] = useState("");
+  const [hash, setHash] = useState("");
   const [options, setOptions] = useState(1);
+  const { config, error } = usePrepareContractWrite({
+    address: mainContractAddress,
+    abi: MainAbi,
+    functionName: 'createDaoProposal',
+    args:[daoName,title,hash,options,time]
+  })
+
+  console.log(config, error)
+  const { data, isLoading, isSuccess, write } = useContractWrite(config)
+  console.log(data, isLoading, isSuccess)   
 
   const handleTitleChange = (val) => {
     setTitle(val);
@@ -18,6 +31,10 @@ function CreateProposal() {
   const handleDescChange = (val) => {
     console.log(val)
     setDesc(val);
+  };
+  const handleOptionsChange = (val) => {
+    console.log(val)
+    setOptions(val);
   };
   const handleDaoChange = (val) => {
     setDaoName(val);
@@ -27,6 +44,7 @@ function CreateProposal() {
   };
   const handleSubmit = async () => {
     console.log(desc)
+    console.log(options)
     const metadataFile = jsonFile('metadata.json', {
         path: desc,
       })
@@ -35,18 +53,15 @@ function CreateProposal() {
         name:title,
     });
     console.log("stored files with cid:", cid);
-    await handleCall();
-    return cid;
+    
+   setHash(cid);
+   console.log(write);
+   await write();
   };
-
+ console.log(isSuccess)
   const handleCall = async () => {
-    const { config } = usePrepareContractWrite({
-        address: '0xecb504d39723b0be0e3a9aa33d646642d1051ee1',
-        abi: wagmigotchiABI,
-        functionName: 'feed',
-      })
-      const { data, isLoading, isSuccess, write } = useContractWrite(config)
-   console.log(isSuccess);    
+    
+  
    
   };
   return (
@@ -77,7 +92,7 @@ function CreateProposal() {
           onChange={(e) => handleDescChange(e.target.value)}
         />
         <label>Options</label>
-        <select name="options" id="options">
+        <select name="options" id="options" onChange= {(e)=>handleOptionsChange(e.target.value)}>
           <option value='1'>1</option>
           <option value='2'>2</option>
         </select>

@@ -9,9 +9,14 @@ import { mainContractAddress, voteContractAddress } from "../../constants";
 function ShowProposal() {
   const [proposals, setProposals] = useState([]);
   const [proposalId, setProposalId] = useState([]);
-  const contract = useContract({
-    address: mainContractAddress,
+  const contract = useContractRead({
+    address: '0x1a40f86CDBAe366684ba93E41281BccAFf69A918',
     abi: MainAbi,
+    functionName: "daoProposals",
+    args: [0],
+    onError(error) {
+      console.log('Error', error)
+    },
   })
   const { config, error } = usePrepareContractWrite({
     address: voteContractAddress[chainId],
@@ -20,10 +25,9 @@ function ShowProposal() {
     args:[0,proposalId]
   })
 
-  console.log(config, error)
+  // console.log(config, error)
   const { data, isLoading, isSuccess, write } = useContractWrite(config)
-console.log(contract)
-  console.log(contract.daoProposals(0));
+
 
   const vote = async(id,option) => {
 setProposalId(id);
@@ -60,7 +64,7 @@ await write();
 
 
   const retrieve = async (cid) => {
-    console.log("retrieve");
+    // console.log("retrieve");
     // const client = makeStorageClient();
     const res = await fetch(
       `https://${cid}.ipfs.dweb.link/${encodeURIComponent("metadata.json")}`
@@ -71,7 +75,7 @@ await write();
       );
     }
     const metadata = await res.json();
-    console.log(metadata);
+    // console.log(metadata);
     // request succeeded! do something with the response object here...
   };
 

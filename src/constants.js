@@ -5,4 +5,4 @@ export const voteContractAddress = {
     '420': '0x499faF659A06C07a73496081328AB85c6F6c51FF',
 };
 
-export const mainContractAddress = '0xeE350433cE0B4E73D1980cDc5185F72C1C14e286';
+export const mainContractAddress = '0x1a40f86CDBAe366684ba93E41281BccAFf69A918';

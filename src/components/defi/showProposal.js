@@ -10,7 +10,7 @@ function ShowProposal() {
   const [proposals, setProposals] = useState([]);
   const [proposalId, setProposalId] = useState([]);
   const contract = useContractRead({
-    address: '0x1a40f86CDBAe366684ba93E41281BccAFf69A918',
+    address: mainContractAddress,
     abi: MainAbi,
     functionName: "daoProposals",
     args: [0],
@@ -18,6 +18,7 @@ function ShowProposal() {
       console.log('Error', error)
     },
   })
+  console.log(0,contract.data)
   const { config, error } = usePrepareContractWrite({
     address: voteContractAddress[chainId],
     abi: VoteAbi,

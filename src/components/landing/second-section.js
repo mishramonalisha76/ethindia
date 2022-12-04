@@ -8,11 +8,11 @@ function SecondSection() {
     <>
       <div className="second-section-container first-level">
         <div className="content-container">
-          <div>Borrow, lend, swap, stake tokens</div>
+          <div>Vote from any chain you want</div>
           <img src={coins} className=" tokens" />
         </div>
         <div className="content-container">
-          <div>Supports transactions on Multichain</div>
+          <div>Aggregate your voting power</div>
           <img src={multichain} className=" multichain" />
         </div>
       </div>

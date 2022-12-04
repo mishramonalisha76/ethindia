@@ -14,7 +14,7 @@ function Landing() {
           <div className="landing-hero-text  animate__animated animate__fadeInLeft">
             <h1 >Say HI to XVote</h1>
             <p>
-              One-stop destination to Borrow, Lend, Stake and Swap your tokens on multiple chains in just a simple click.
+              Vote from any chain you want and maximize your voting power
             </p>
             <div>
             <Link to="/createproposal">
